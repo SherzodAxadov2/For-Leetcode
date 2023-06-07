@@ -42,11 +42,25 @@
 
 // console.log(canPlaceFlowers([1, 0, 0, 0, 1, 0, 0], 2));
 
+// Reverse Vowels of a String
+
 function reverseVowels(s: string): string {
+  let vowels: string[] = ["a", "e", "i", "o", "u"];
+  let stringVowels: string[] = [];
   let arr: string[] = s.split("");
-  arr.forEach((el: string) => {});
-  console.log(arr);
-  return "";
+  arr.forEach((el: string, i) => {
+    if (vowels.includes(el.toLocaleLowerCase())) {
+      arr[i] = "null";
+      stringVowels.unshift(el);
+    }
+  });
+  arr.forEach((el: string, i: number) => {
+    if (el === "null") {
+      arr[i] = `${stringVowels.splice(0, 1)}`;
+    }
+  });
+
+  return arr.join('');
 }
 
-console.log(reverseVowels("leetcode"));
+console.log(reverseVowels("leEtcode"));
