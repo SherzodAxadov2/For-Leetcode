@@ -66,8 +66,55 @@
 // console.log(reverseVowels("leEtcode"));
 
 // Reverse Words in a String
-function reverseWords(s: string): string {
-  return s.trim().replace(/\s+/g, " ").split(' ').reverse().join(" ");
+// function reverseWords(s: string): string {
+//   console.log(s.trim().replace(/\s+/i, " "));
+
+//   return s.trim().replace(/\s+/g, " ").split(' ').reverse().join(" ");
+// }
+
+// console.log(reverseWords("  hello  world  "));
+
+// Increasing Triplet Subsequence
+// function increasingTriplet(nums: number[]): boolean {
+//   let boolean: boolean = false;
+//   for (let i = 0; i < nums.length-2; i++) {
+//     if (nums[i] < nums[i + 1] && nums[i + 1] < nums[i + 2]) {
+//       boolean = true;
+//       break
+//     }
+//   }
+
+//   return boolean;
+// }
+
+// console.log(increasingTriplet([5, 4, 3, 4, 5]));
+
+// Move Zeroes
+// function moveZeroes(nums: number[]): void {
+//   let count: number = 0;
+//   for (let i: number = 0; i < nums.length; i++) {
+//     if (nums[i] === 0) {
+//       count++;
+//       nums.splice(i, 1);
+//       i--;
+//     }
+//   }
+//   for (let i: number = 0; i < count; i++) {
+//     nums.push(0);
+//   }
+// }
+
+function moveZeroes(nums: number[]): void {
+  for (let i = 0, j = 0; i < nums.length; i++) {
+    if (nums[i] != 0) {
+      const x: number = nums[j]; //0
+      nums[j] = nums[i]; //2
+      nums[i] = x; //0
+      j++;
+      console.log(i, j);
+      console.log(nums);
+    }
+  }
 }
 
-console.log(reverseWords("  hello          world  "));
+moveZeroes([0, 0, 1]);
