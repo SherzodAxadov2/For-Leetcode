@@ -44,23 +44,30 @@
 
 // Reverse Vowels of a String
 
-function reverseVowels(s: string): string {
-  let vowels: string[] = ["a", "e", "i", "o", "u"];
-  let stringVowels: string[] = [];
-  let arr: string[] = s.split("");
-  arr.forEach((el: string, i) => {
-    if (vowels.includes(el.toLocaleLowerCase())) {
-      arr[i] = "null";
-      stringVowels.unshift(el);
-    }
-  });
-  arr.forEach((el: string, i: number) => {
-    if (el === "null") {
-      arr[i] = `${stringVowels.splice(0, 1)}`;
-    }
-  });
+// function reverseVowels(s: string): string {
+//   let vowels: string[] = ["a", "e", "i", "o", "u"];
+//   let stringVowels: string[] = [];
+//   let arr: string[] = s.split("");
+//   arr.forEach((el: string, i) => {
+//     if (vowels.includes(el.toLocaleLowerCase())) {
+//       arr[i] = "null";
+//       stringVowels.unshift(el);
+//     }
+//   });
+//   arr.forEach((el: string, i: number) => {
+//     if (el === "null") {
+//       arr[i] = `${stringVowels.splice(0, 1)}`;
+//     }
+//   });
 
-  return arr.join('');
+//   return arr.join('');
+// }
+
+// console.log(reverseVowels("leEtcode"));
+
+// Reverse Words in a String
+function reverseWords(s: string): string {
+  return s.trim().replace(/\s+/g, " ").split(' ').reverse().join(" ");
 }
 
-console.log(reverseVowels("leEtcode"));
+console.log(reverseWords("  hello          world  "));
