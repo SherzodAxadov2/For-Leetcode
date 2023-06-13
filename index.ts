@@ -104,17 +104,39 @@
 //   }
 // }
 
-function moveZeroes(nums: number[]): void {
-  for (let i = 0, j = 0; i < nums.length; i++) {
-    if (nums[i] != 0) {
-      const x: number = nums[j]; //0
-      nums[j] = nums[i]; //2
-      nums[i] = x; //0
-      j++;
-      console.log(i, j);
-      console.log(nums);
-    }
-  }
-}
+// function moveZeroes(nums: number[]): void {
+//   for (let i = 0, j = 0; i < nums.length; i++) {
+//     if (nums[i] != 0) {
+//       const x: number = nums[j]; //0
+//       nums[j] = nums[i]; //2
+//       nums[i] = x; //0
+//       j++;
+//       console.log(i, j);
+//       console.log(nums);
+//     }
+//   }
+// }
 
-moveZeroes([0, 0, 1]);
+// moveZeroes([0, 0, 1]);
+
+// Max Number of K-Sum Pairs
+function maxOperations(nums: number[], k: number): number {
+  let set: Set<number> = new Set();
+  let pairs: number[][] = [];
+
+  for (let i: number = 0; i < nums.length; i++) {
+    const complement = k - nums[i];
+
+    if (set.has(complement)) {
+      pairs.push([nums[i], complement]);
+      set.delete(nums[i])
+    }
+    set.add(nums[i]);
+    console.log(set);
+  }
+  
+
+  return pairs.length;
+}
+// 3 1 
+console.log(maxOperations([3, 1, 3, 4, 3], 6));
