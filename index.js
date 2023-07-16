@@ -196,19 +196,80 @@
 //   ).then(console.log)
 // );
 
-
 // 2621. SLeep
-async function sleep(millis) {
-    return new Promise((resolve, reject) =>{
-      try {
-        setTimeout(() => {
-          resolve()
-        }, millis);
-      } catch (error) {
-        reject(error)
-      }
-    })
-}
+// async function sleep(millis) {
+//     return new Promise((resolve, reject) =>{
+//       try {
+//         setTimeout(() => {
+//           resolve()
+//         }, millis);
+//       } catch (error) {
+//         reject(error)
+//       }
+//     })
+// }
 
-let t = Date.now()
-sleep(1000).then(() => console.log(Date.now() - t))
+// let t = Date.now()
+// sleep(1000).then(() => console.log(Date.now() - t))
+
+// 2715. Execute Cancellable Function With Delay
+// var cancellable = function(fn, args, t) {
+
+// };
+
+// async function f() {
+//   let promise = 2 + 5;
+//   let result = await promise; // Syntax error
+//   return result;
+// }
+
+// console.log(f());
+
+// console.log(String.raw(`Hello\nWorld`));
+
+// const regex = String.raw(`'+'\d{3} (\d{2}) \d{3}-\d{2}-\d{2}`)
+
+// const phoneNumber = '+998 (94) 122-90-05'
+// console.log(regex.test(phoneNumber));
+// console.log('walwkemflawm');
+
+// const regex = String.raw`\d{3}-\d{3}-\d{4}`;
+
+// const phoneNumber = '123-456-7890';
+// console.log(regex.test(phoneNumber)); // true
+
+// async function getData(){
+//     return await Promise.resolve('Returns data for phone number')
+// }
+
+// const data = getData()
+// data.then((res)=>console.log(res))
+
+// function addToList(item, list){
+//     console.log(list.push(item));
+//     return list.push(item);
+// }
+
+// const result = addToList('apple', ['banana'])
+// console.log(result);
+
+// console.log(typeof 9007199254740991); // 9007199254740992
+// console.log(typeof 9007199254740991);
+
+
+// Rotate an array
+// var rotate = function (nums, k) {
+//   let n = k % nums.length;
+//   nums.unshift(...nums.splice(nums.length - n));
+
+//   return nums;
+// };
+// console.log(rotate([1, 2, 3], 4));
+
+
+// 28. Find the Index of the First Occurrence in a String
+var strStr = function(haystack, needle) {
+    return haystack.indexOf(needle)
+};
+
+console.log(strStr('leetcode', 'leeto'));
