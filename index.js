@@ -256,7 +256,6 @@
 // console.log(typeof 9007199254740991); // 9007199254740992
 // console.log(typeof 9007199254740991);
 
-
 // Rotate an array
 // var rotate = function (nums, k) {
 //   let n = k % nums.length;
@@ -266,10 +265,106 @@
 // };
 // console.log(rotate([1, 2, 3], 4));
 
-
 // 28. Find the Index of the First Occurrence in a String
-var strStr = function(haystack, needle) {
-    return haystack.indexOf(needle)
+// var strStr = function(haystack, needle) {
+//     return haystack.indexOf(needle)
+// };
+
+// console.log(strStr('leetcode', 'leeto'));
+
+// var mergeTwoLists = function (list1, list2) {
+//   let newArr = list1.concat(list2);
+//   return newArr.sort((a, b) => a - b);
+// };
+
+// console.log(mergeTwoLists([1, 3, 4], [1, 2, 3, 5]));
+
+// var maxProfit = function (prices) {
+//   let maxDiff = prices[1] - prices[0];
+//   let minNum = prices[0];
+
+//   for (let i = 1; i < prices.length; i++) {
+//     const num = prices[i];
+
+//     if (num - minNum > maxDiff) {
+//       maxDiff = num - minNum;
+//     }
+
+//     if (num < minNum) {
+//       minNum = num;
+//     }
+//   }
+
+//   return maxDiff < 0 ? 0 : maxDiff;
+// };
+
+// console.log(maxProfit([2, 4, 1]));
+
+// var lengthOfLastWord = function (s) {
+//   return s.trim().split(' ').at(-1)
+// };
+
+// console.log(lengthOfLastWord("   Hello  World   "));
+
+// var removeElement = function (nums, val) {
+//   // let newArray = nums.filter((el) => el !== val);
+//   // let count = nums.length - newArray.length;
+//   // return newArray.concat(new Array(count).fill("_"));
+
+//   return nums.sort((a,b)=>a-b)
+// };
+
+// var removeElement = function (nums, val) {
+//   return nums.filter((el) => el !== val).length;
+// };
+
+// function removeElement(nums, val) {
+//   let k = 0;
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+
+//   return k;
+// }
+
+// console.log(removeElement([3, 2, 2, 3], 3));
+
+// var removeDuplicates = function (nums) {
+//   let k = 0;
+//   let newArr  = [];
+
+//   for (let i = 0; i < nums.length; i++) {
+//     console.log(newArr.indexOf(nums[i]))
+//     // if(newArr.indexOf(nums[i])){}
+//     // if (nums[i] !== val) {
+//     //   nums[k] = nums[i];
+//     //   k++;
+//     // }
+//   }
+
+//   return newArr;
+// };
+
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+var majorityElement = function (nums) {
+  let newArr = Array.from(new Set(nums));
+
+  let n = 0;
+  let k;
+
+  newArr.forEach((el) => {
+    if (n < nums.filter((i) => i === el).length) {
+      n = nums.filter((i) => i === el).length;
+      k = el
+    }
+  });
+
+  return k;
 };
 
-console.log(strStr('leetcode', 'leeto'));
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]));
