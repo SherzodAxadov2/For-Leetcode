@@ -163,14 +163,32 @@
 
 // console.log(obj1.age);
 
-// Ransom Note
-var canConstruct = function (ransomNote, magazine) {
-  for (let letter of magazine) {
-    if (ransomNote.includes(letter))
-      ransomNote = ransomNote.replace(letter, "");
-  }
+// // Ransom Note
+// var canConstruct = function (ransomNote, magazine) {
+//   for (let letter of magazine) {
+//     if (ransomNote.includes(letter))
+//       ransomNote = ransomNote.replace(letter, "");
+//   }
 
-  return !ransomNote.length;
+//   return !ransomNote.length;
+// };
+
+// console.log(canConstruct("a", "b"));
+
+var isIsomorphic = function (s, t) {
+  let obj = {};
+  if (s.length === t.length) {
+    s.split("").forEach((el, i) => {
+      if (!obj.hasOwnProperty(el) && !Object.values(obj).includes(t[i])) {
+        obj[el] = t[i];
+      }
+    });
+  } else return false;
+
+  let tNew = "";
+  for (let letter of s) tNew += obj[letter];
+
+  return tNew === t;
 };
 
-console.log(canConstruct("a", "b"));
+console.log(isIsomorphic("paper", "title"));
