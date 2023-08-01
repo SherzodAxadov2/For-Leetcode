@@ -120,23 +120,31 @@
 // moveZeroes([0, 0, 1]);
 
 // Max Number of K-Sum Pairs
-function maxOperations(nums: number[], k: number): number {
-  let set: Set<number> = new Set();
-  let pairs: number[][] = [];
+// function maxOperations(nums: number[], k: number): number {
+//   let set: Set<number> = new Set();
+//   let pairs: number[][] = [];
 
-  for (let i: number = 0; i < nums.length; i++) {
-    const complement = k - nums[i];
+//   for (let i: number = 0; i < nums.length; i++) {
+//     const complement = k - nums[i];
 
-    if (set.has(complement)) {
-      pairs.push([nums[i], complement]);
-      set.delete(nums[i])
-    }
-    set.add(nums[i]);
-    console.log(set);
-  }
+//     if (set.has(complement)) {
+//       pairs.push([nums[i], complement]);
+//       set.delete(nums[i])
+//     }
+//     set.add(nums[i]);
+//     console.log(set);
+//   }
   
 
-  return pairs.length;
-}
-// 3 1 
-console.log(maxOperations([3, 1, 3, 4, 3], 6));
+//   return pairs.length;
+// }
+// // 3 1 
+// console.log(maxOperations([3, 1, 3, 4, 3], 6));
+
+// enum UserResponse {
+//   No = 0,
+//   Yes = 1,
+// }
+
+// console.log('User response: ', UserResponse.No);
+
