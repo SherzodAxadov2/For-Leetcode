@@ -175,20 +175,44 @@
 
 // console.log(canConstruct("a", "b"));
 
-var isIsomorphic = function (s, t) {
+// var isIsomorphic = function (s, t) {
+//   let obj = {};
+//   if (s.length === t.length) {
+//     s.split("").forEach((el, i) => {
+//       if (!obj.hasOwnProperty(el) && !Object.values(obj).includes(t[i])) {
+//         obj[el] = t[i];
+//       }
+//     });
+//   } else return false;
+
+//   let tNew = "";
+//   for (let letter of s) tNew += obj[letter];
+
+//   return tNew === t;
+// };
+
+// console.log(isIsomorphic("paper", "title"));
+
+// Word Pattern
+var wordPattern = function (pattern, s) {
+  let sArr = s.split(" ");
   let obj = {};
-  if (s.length === t.length) {
-    s.split("").forEach((el, i) => {
-      if (!obj.hasOwnProperty(el) && !Object.values(obj).includes(t[i])) {
-        obj[el] = t[i];
+
+  if (pattern.length === sArr.length) {
+    for (let i = 0; i < pattern.length; i++) {
+      if (
+        !obj.hasOwnProperty(pattern[i]) &&
+        !Object.values(obj).includes(sArr[i])
+      ) {
+        obj[pattern[i]] = sArr[i];
       }
-    });
+    }
   } else return false;
 
-  let tNew = "";
-  for (let letter of s) tNew += obj[letter];
+  let newarr = [];
+  for (let letter of pattern) newarr.push(obj[letter]);
 
-  return tNew === t;
+  return newarr.join(" ") === sArr.join(" ");
 };
 
-console.log(isIsomorphic("paper", "title"));
+console.log(wordPattern("abba", "dog dog dog dog"));
