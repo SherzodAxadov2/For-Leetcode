@@ -193,26 +193,44 @@
 
 // console.log(isIsomorphic("paper", "title"));
 
-// Word Pattern
-var wordPattern = function (pattern, s) {
-  let sArr = s.split(" ");
-  let obj = {};
+// // Word Pattern
+// var wordPattern = function (pattern, s) {
+//   let sArr = s.split(" ");
+//   let obj = {};
 
-  if (pattern.length === sArr.length) {
-    for (let i = 0; i < pattern.length; i++) {
-      if (
-        !obj.hasOwnProperty(pattern[i]) &&
-        !Object.values(obj).includes(sArr[i])
-      ) {
-        obj[pattern[i]] = sArr[i];
+//   if (pattern.length === sArr.length) {
+//     for (let i = 0; i < pattern.length; i++) {
+//       if (
+//         !obj.hasOwnProperty(pattern[i]) &&
+//         !Object.values(obj).includes(sArr[i])
+//       ) {
+//         obj[pattern[i]] = sArr[i];
+//       }
+//     }
+//   } else return false;
+
+//   let newarr = [];
+//   for (let letter of pattern) newarr.push(obj[letter]);
+
+//   return newarr.join(" ") === sArr.join(" ");
+// };
+
+// console.log(wordPattern("abba", "dog dog dog dog"));
+
+// isValid anagram
+
+var isAnagram = function (s, t) {
+  let sSet = Array.from(new Set(s));
+  let tSet = Array.from(new Set(t));
+  if (s.length === t.length && sSet.length === tSet.length) {
+    for (let i = 0; i < s.length; i++) {
+      if (t.includes(s[i])) {
+        t = t.replace(s[i], "");
       }
     }
   } else return false;
 
-  let newarr = [];
-  for (let letter of pattern) newarr.push(obj[letter]);
-
-  return newarr.join(" ") === sArr.join(" ");
+  return !t.length;
 };
 
-console.log(wordPattern("abba", "dog dog dog dog"));
+console.log(isAnagram("anagram", "nagaram"));
