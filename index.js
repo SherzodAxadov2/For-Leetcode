@@ -217,20 +217,49 @@
 
 // console.log(wordPattern("abba", "dog dog dog dog"));
 
-// isValid anagram
+// // isValid anagram
+// var isAnagram = function (s, t) {
+//   let sSet = Array.from(new Set(s));
+//   let tSet = Array.from(new Set(t));
+//   if (s.length === t.length && sSet.length === tSet.length) {
+//     for (let i = 0; i < s.length; i++) {
+//       if (t.includes(s[i])) {
+//         t = t.replace(s[i], "");
+//       }
+//     }
+//   } else return false;
 
-var isAnagram = function (s, t) {
-  let sSet = Array.from(new Set(s));
-  let tSet = Array.from(new Set(t));
-  if (s.length === t.length && sSet.length === tSet.length) {
-    for (let i = 0; i < s.length; i++) {
-      if (t.includes(s[i])) {
-        t = t.replace(s[i], "");
-      }
+//   return !t.length;
+// };
+
+// console.log(isAnagram("anagram", "nagaram"));
+
+// Happy Number
+// var isHappy = function (n) {
+//   let rem = n % 10;
+
+//   while (n < 10) {
+//     console.log(n);
+//     n--;
+//   }
+
+//   return parseInt(kv / 10);
+// };
+
+// console.log(isHappy(7));
+
+// Remove Duplicates from Sorted Array
+
+var removeDuplicates = function (nums) {
+  let index = 1;
+  nums.forEach((el) => {
+    if (nums[index - 1] !== el) {
+      nums[index] = el;
+      index++;
     }
-  } else return false;
+  });
 
-  return !t.length;
+  return index;
 };
 
-console.log(isAnagram("anagram", "nagaram"));
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
