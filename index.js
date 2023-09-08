@@ -250,16 +250,31 @@
 
 // Remove Duplicates from Sorted Array
 
-var removeDuplicates = function (nums) {
-  let index = 1;
-  nums.forEach((el) => {
-    if (nums[index - 1] !== el) {
-      nums[index] = el;
-      index++;
-    }
-  });
+// var removeDuplicates = function (nums) {
+//   let index = 1;
+//   nums.forEach((el) => {
+//     if (nums[index - 1] !== el) {
+//       nums[index] = el;
+//       index++;
+//     }
+//   });
 
-  return index;
-};
+//   return index;
+// };
 
 // console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+var generateParenthesis = function (n) {
+  let open = 0;
+  let close = 0;
+  let str = [];
+  let arr = [];
+
+  if (close >= open) {
+    str.push("(");
+  } else str.push(")");
+
+  return str;
+};
+
+console.log(generateParenthesis(3));
