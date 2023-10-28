@@ -264,17 +264,390 @@
 
 // console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
 
-var generateParenthesis = function (n) {
-  let open = 0;
-  let close = 0;
-  let str = [];
-  let arr = [];
+// var generateParenthesis = function (n) {
+//   let open = 0;
+//   let close = 0;
+//   let solution = [];
 
-  if (close >= open) {
-    str.push("(");
-  } else str.push(")");
+//   let generate = (left, right, partial) => {};
 
-  return str;
-};
+//   if (close !== n && open !== n) {
+//     generate(close, open);
+//   }
 
-console.log(generateParenthesis(3));
+//   return solution;
+// };
+
+// console.log(generateParenthesis(3));
+
+// var searchInsert = function (nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left < right) {
+//     let mid = Math.floor(right / 2);
+
+//     if (nums[mid] === target) return mid;
+
+//     if (nums[mid] < target) {
+//       left = mid + 1;
+//     } else {
+//       right = mid - 1;
+//     }
+//   }
+//   return left;
+// };
+
+// console.log(searchInsert([1, 3, 5, 6, 7, 8, 10], 12));
+
+// var plusOne = function (digits) {
+//   let num = parseFloat(digits.join(""));
+//   // (num + 1).toString().split("")
+//   return num;
+// };
+
+// console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]));
+
+// var singleNumber = function (nums) {
+//   let ht = {};
+//   for (const num of nums) {
+//     ht[num] = ht[num] + 1 || 1;
+//   }
+
+//   for (const key in ht) {
+//     if (ht[key] === 1) return key;
+//   }
+// };
+
+// console.log(singleNumber([4, 5, 1, 1, 3, 4, 2, 7, 2, 7]));
+
+// const topFn = (n) => {
+//   let arr = [1, 2];
+//   sum = 3;
+
+//   for (let i = 1; i < n - 1; i++) {
+//     let count = arr[i] + arr[i - 1];
+//     arr.push(count);
+//     sum += arr[i + 1];
+//   }
+
+//   return sum;
+// };
+
+// console.log(topFn(4));
+
+// class User {
+//   sayHEllo(str) {
+//     return str;
+//   }
+// }
+
+// const p = new User();
+// console.log(p.sayHEllo(1234));
+
+// var isHappy = function (n) {
+//   let sum = 0;
+
+//   const calculate = (n) => {
+//     console.log(n);
+//     sum = String(n)
+//       .split("")
+//       .reduce((prev, next) => Math.pow(+prev, 2) + Math.pow(+next, 2), 0);
+//   };
+
+//   calculate(n);
+
+//   if (sum > 10) {
+//     calculate(sum);
+//   }
+
+//   return sum;
+// };
+
+// console.log(isHappy(19));
+
+// var minimumTotal = function (triangle) {
+//   let sum = 0;
+//   for (let i = 0; i < triangle.length; i++) {
+//     sum += Math.min(...triangle[i]);
+//   }
+
+//   return sum;
+// };
+
+// console.log(minimumTotal([[[-1], [2, 3], [1, -1, -3]]]));
+
+// (function () {
+//   console.log("it is IIFE");
+// })();
+
+// function User(name) {
+//   this.name = name;
+//   this.isPerson = false;
+// }
+
+// let per1 = new User("hello");
+
+// console.log(per1.name);
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//     alert(this.name);
+//   }
+// }
+
+// // console.log(Object.getOwnPropertyDescriptors(User.prototype));
+// console.log(typeof User.prototype);
+
+// class Person {
+//   constructor(name, age, country) {
+//     this.name = name;
+//     this.age = age;
+//     this.country = country;
+//   }
+
+//   personDetail() {
+//     return `My name is ${this.name} and I'm ${this.age} years old. I'm from Uzbekistan!`;
+//   }
+// }
+
+// const person1 = new Person("Shaxzod", 21, "Uzbekistan");
+// const person2 = new Person("Shaxa", 23, "Russia");
+
+// console.log(person1.personDetail());
+// console.log(person2.personDetail);
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   area() {
+//     return `The area of this rectangle is ${this.width * this.height}`;
+//   }
+
+//   perimeter() {
+//     return `The perimeter of this rectangle is ${
+//       (this.width + this.height) * 2
+//     }`;
+//   }
+// }
+
+// const rect1 = new Rectangle(12, 25);
+
+// console.log(rect1.area());
+// console.log(rect1.perimeter());
+
+// const throwError = () => {
+//   return throw new Error("errrooooooooorr~");
+// };
+
+// console.log(throwError());
+
+// let user = {
+//   name: "John",
+//   getName() {
+//     console.log(`name is ${this.name}`);
+//   },
+// };
+
+// // console.log(user.getName());
+// setTimeout(user.name, 500);
+
+// class Animal {
+//   constructor(name, speed) {
+//     this.name = name;
+//     this.speed = speed;
+//   }
+
+//   logger() {
+//     console.log("hel");
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   constructor() {
+//     super().logger();
+//   }
+
+//   showName() {
+//     return this.name;
+//   }
+// }
+
+// const rabbit = new Rabbit("goooo");
+
+// console.log(rabbit.showName());
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   makeSound() {
+//     console.log("Some generic sound");
+//   }
+// }
+
+// class Dog extends Animal {
+//   bark() {
+//     console.log("Woof!");
+//   }
+// }
+
+// let dog = new Dog();
+// console.log(dog.makeSound());
+// let obj = {
+//   name: "John",
+//   age: 234,
+// };
+// obj.__proto__.color = "red";
+// const { age, name } = obj;
+
+// console.log(Object.getPrototypeOf(obj));
+
+// function Person(name) {
+//   this.name = name;
+// }
+// let animal = {
+//   eats: true,
+// };
+// let rabbit = {
+//   jumps: true,
+// };
+
+// rabbit.__proto__ = animal;
+
+// const newObject = new Object();
+
+// console.log(newObject.__proto__);
+
+// console.log(rabbit.eats);
+
+// function solution(n) {
+//   let sum = 0;
+// }
+
+// console.log(solution(123));
+
+// let newArr = new Array(2);
+
+// console.log(newArr.fill(0).join(""));
+
+// function solution(a) {
+//   let arr = [];
+//   let num = -1;
+//   for (let i = 0; i < a.length; i++) {
+//     if (arr.includes(a[i])) {
+//       num = a[i];
+//       break;
+//     }
+
+//     arr.push(a[i]);
+//   }
+
+//   return num;
+// }
+
+// console.log(solution([2, 1, 3, 5, 3, 2]));
+
+// let str = "asdf";
+// console.log(str[0]);
+
+// function solution(s) {
+//   let obj = {};
+//   for (let i = 0; i < s.length; i++) {
+//     obj[s[i]] = obj[s[i]] ? obj[s[i]] + 1 : 1;
+//   }
+
+//   for (let k in obj) {
+//     if (obj[k] === 1) return k;
+//   }
+
+//   return "_";
+// }
+
+// console.log(solution("abaaba"));
+
+// let a = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// function solution(a) {
+//   let n = a.length;
+//   // for (let i = 0; i < n / 2; i++) {
+//   //   for (let j = i; j < n - 1 - i; j++) {
+//   //     console.log(a[i][j]);
+//   //     // const temp = a[i][j];
+//   //     // a[i][j] = a[n - 1 - j][i];
+//   //     // a[n - 1 - j][i] = a[n - 1 - i][n - 1 - j];
+//   //     // a[n - 1 - i][n - 1 - j] = a[j][n - 1 - i];
+//   //     // a[j][n - 1 - i] = temp;
+//   //   }
+//   // }
+
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n / 2; j++) {
+//       console.log(a[i][j]);
+//       // const temp = a[i][j];
+//       // a[i][j] = a[i][n - 1 - j];
+//       // a[i][n - 1 - j] = temp;
+//     }
+//   }
+
+//   return a;
+// }
+
+// console.log(solution(a));
+
+// function maxKnapsackValue(weight1, value1, weight2, value2, maxW) {
+//   // Create a 2D array to store the maximum values for different subproblems.
+//   const dp = new Array(maxW + 1).fill(0).map(() => new Array(2).fill(0)); //nimaga maxW + 1
+
+//   // Initialize the first row and column of the dp table.
+//   for (let w = 0; w <= maxW; w++) {
+//     dp[w][0] = w >= weight1 ? value1 : 0;
+//     dp[w][1] = w >= weight2 ? value2 : 0;
+//   }
+
+//   console.log(dp);
+
+//   // // Fill in the dp table.
+//   // for (let w = weight1; w <= maxW; w++) {
+//   //   dp[w][0] = Math.max(dp[w][0], dp[w - weight1][0] + value1);
+//   // }
+
+//   // for (let w = weight2; w <= maxW; w++) {
+//   //   dp[w][1] = Math.max(dp[w][1], dp[w - weight2][1] + value2);
+//   // }
+
+//   // // The maximum value is in the last row of the dp table.
+//   // return Math.max(dp[maxW][0], dp[maxW][1]);
+// }
+
+// console.log(maxKnapsackValue(10, 5, 6, 4, 9));
+
+// Linked List questions
+let l = [3, 1, 2, 3, 4, 5];
+let k = 3;
+
+function solution(l, k) {
+  let getIndex = 0;
+  for (let i = 0; i < l.length; i++) {
+    if (l[i] !== k) {
+      l[getIndex] = l[i];
+      getIndex++;
+    }
+  }
+
+  l.length = getIndex;
+  return l;
+}
+
+console.log(solution(l, k));
