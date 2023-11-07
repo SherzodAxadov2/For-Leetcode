@@ -634,20 +634,36 @@
 // console.log(maxKnapsackValue(10, 5, 6, 4, 9));
 
 // Linked List questions
-let l = [3, 1, 2, 3, 4, 5];
-let k = 3;
+// let l = [3, 1, 2, 3, 4, 5];
+// let k = 3;
 
-function solution(l, k) {
-  let getIndex = 0;
-  for (let i = 0; i < l.length; i++) {
-    if (l[i] !== k) {
-      l[getIndex] = l[i];
-      getIndex++;
-    }
+// function solution(l, k) {
+//   let getIndex = 0;
+//   for (let i = 0; i < l.length; i++) {
+//     if (l[i] !== k) {
+//       l[getIndex] = l[i];
+//       getIndex++;
+//     }
+//   }
+
+//   l.length = getIndex;
+//   return l;
+// }
+
+// console.log(solution(l, k));
+
+// Group anagrams medium
+
+var groupAnagrams = function (strs) {
+  let k = {};
+  for (let i of strs) {
+    let key = i.split("").sort().join("");
+    if (!k[key]) {
+      k[key] = [i];
+    } else k[key].push(i);
   }
 
-  l.length = getIndex;
-  return l;
-}
+  return Object.values(k);
+};
 
-console.log(solution(l, k));
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
