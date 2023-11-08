@@ -634,23 +634,75 @@
 // console.log(maxKnapsackValue(10, 5, 6, 4, 9));
 
 // Linked List questions
-// let l = [3, 1, 2, 3, 4, 5];
-// let k = 3;
+// // let l = [3, 1, 2, 3, 4, 5];
+// // let k = 3;
 
-// function solution(l, k) {
-//   let getIndex = 0;
-//   for (let i = 0; i < l.length; i++) {
-//     if (l[i] !== k) {
-//       l[getIndex] = l[i];
-//       getIndex++;
+// // function solution(l, k) {
+// //   let getIndex = 0;
+// //   for (let i = 0; i < l.length; i++) {
+// //     if (l[i] !== k) {
+// //       l[getIndex] = l[i];
+// //       getIndex++;
+// //     }
+// //   }
+
+// //   l.length = getIndex;
+// //   return l;
+// // }
+
+// // console.log(solution(l, k));
+
+// Contains Duplicate
+// var containsDuplicate = function (nums) {
+//   let obj = {};
+
+//   for (let i of nums) {
+//     obj[i] = obj[i] ? obj[i] + 1 : 1;
+
+//     if (obj[i] > 1) {
+//       return true;
 //     }
 //   }
 
-//   l.length = getIndex;
-//   return l;
-// }
+//   return false;
+// };
 
-// console.log(solution(l, k));
+// console.log(containsDuplicate([1, 2, 3, 1]));
+
+// var isAnagram = function (s, t) {
+//   if (s.length !== t.length) return false;
+//   for (let i = 0; i < s.length; i++) {
+//     if (!t.includes(s[i])) return false;
+//   }
+
+//   return true;
+// };
+
+// console.log(isAnagram("anagram", "nagarama"));
+
+// Top K Frequent Elements
+var topKFrequent = function (nums, k) {
+  let map = new Map();
+
+  for (let k of nums) {
+    if (!map.has(k)) {
+      map.set(k, 1);
+    } else map.set(k, map.get(k) + 1);
+  }
+
+  let sorted = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
+  let result = [];
+  for (let pair of sorted) {
+    if (k) {
+      result.push(pair[0]);
+      k--;
+    }
+  }
+
+  return result;
+};
+
+console.log(topKFrequent([4, -1, -1, 2, 1, 2, 3], 2));
 
 // Group anagrams medium
 
