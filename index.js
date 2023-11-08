@@ -634,23 +634,23 @@
 // console.log(maxKnapsackValue(10, 5, 6, 4, 9));
 
 // Linked List questions
-// let l = [3, 1, 2, 3, 4, 5];
-// let k = 3;
+// // let l = [3, 1, 2, 3, 4, 5];
+// // let k = 3;
 
-// function solution(l, k) {
-//   let getIndex = 0;
-//   for (let i = 0; i < l.length; i++) {
-//     if (l[i] !== k) {
-//       l[getIndex] = l[i];
-//       getIndex++;
-//     }
-//   }
+// // function solution(l, k) {
+// //   let getIndex = 0;
+// //   for (let i = 0; i < l.length; i++) {
+// //     if (l[i] !== k) {
+// //       l[getIndex] = l[i];
+// //       getIndex++;
+// //     }
+// //   }
 
-//   l.length = getIndex;
-//   return l;
-// }
+// //   l.length = getIndex;
+// //   return l;
+// // }
 
-// console.log(solution(l, k));
+// // console.log(solution(l, k));
 
 // Contains Duplicate
 // var containsDuplicate = function (nums) {
@@ -703,3 +703,19 @@ var topKFrequent = function (nums, k) {
 };
 
 console.log(topKFrequent([4, -1, -1, 2, 1, 2, 3], 2));
+
+// Group anagrams medium
+
+var groupAnagrams = function (strs) {
+  let k = {};
+  for (let i of strs) {
+    let key = i.split("").sort().join("");
+    if (!k[key]) {
+      k[key] = [i];
+    } else k[key].push(i);
+  }
+
+  return Object.values(k);
+};
+
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
