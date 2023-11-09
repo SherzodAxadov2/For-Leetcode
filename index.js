@@ -681,41 +681,62 @@
 // console.log(isAnagram("anagram", "nagarama"));
 
 // Top K Frequent Elements
-var topKFrequent = function (nums, k) {
-  let map = new Map();
+// var topKFrequent = function (nums, k) {
+//   let map = new Map();
 
-  for (let k of nums) {
-    if (!map.has(k)) {
-      map.set(k, 1);
-    } else map.set(k, map.get(k) + 1);
-  }
+//   for (let k of nums) {
+//     if (!map.has(k)) {
+//       map.set(k, 1);
+//     } else map.set(k, map.get(k) + 1);
+//   }
 
-  let sorted = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
-  let result = [];
-  for (let pair of sorted) {
-    if (k) {
-      result.push(pair[0]);
-      k--;
-    }
-  }
+//   let sorted = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
+//   let result = [];
+//   for (let pair of sorted) {
+//     if (k) {
+//       result.push(pair[0]);
+//       k--;
+//     }
+//   }
 
-  return result;
-};
+//   return result;
+// };
 
-console.log(topKFrequent([4, -1, -1, 2, 1, 2, 3], 2));
+// console.log(topKFrequent([4, -1, -1, 2, 1, 2, 3], 2));
 
 // Group anagrams medium
 
-var groupAnagrams = function (strs) {
-  let k = {};
-  for (let i of strs) {
-    let key = i.split("").sort().join("");
-    if (!k[key]) {
-      k[key] = [i];
-    } else k[key].push(i);
+// var groupAnagrams = function (strs) {
+//   let k = {};
+//   for (let i of strs) {
+//     let key = i.split("").sort().join("");
+//     if (!k[key]) {
+//       k[key] = [i];
+//     } else k[key].push(i);
+//   }
+
+//   return Object.values(k);
+// };
+
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+// Product of Array Except Self
+var productExceptSelf = function (nums) {
+  let answer = new Array(nums.length).fill(1);
+  let prefix = 1;
+  let postfix = 1;
+  for (let i = 0; i < answer.length; i++) {
+    answer[i] *= prefix;
+    prefix *= nums[i];
   }
 
-  return Object.values(k);
+  for (let i = answer.length - 1; i >= 0; i--) {
+    answer[i] *= postfix;
+    [1, 4, 12, 24];
+    postfix *= nums[i];
+  }
+
+  return answer;
 };
 
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(productExceptSelf([1, 2, 3, 4]));
