@@ -134,11 +134,10 @@
 //     set.add(nums[i]);
 //     console.log(set);
 //   }
-  
 
 //   return pairs.length;
 // }
-// // 3 1 
+// // 3 1
 // console.log(maxOperations([3, 1, 3, 4, 3], 6));
 
 // enum UserResponse {
@@ -148,3 +147,31 @@
 
 // console.log('User response: ', UserResponse.No);
 
+// let salary;
+// salary = 12000;
+// salary = '12000';
+// salary = true;
+
+// const Arr: (number | string)[] = [234, "fsadsfas", 23452345]; // union types
+
+// let literalTypes: "Uzbekistan" | "Russia" | "Turkmanistan" | "Tajikistan"; //literal types
+
+// literalTypes = "Uzbekistan";
+
+// enum Job {
+//   "Teacher",
+//   "Fireman",
+//   "Doctor",
+// }
+
+// const myJob = Job.Teacher;
+
+// console.log(myJob);
+
+// type title = string | number; //type aliases
+
+// let nameOfPerson: title = 2345;
+
+const link = document.querySelector("a")!;
+
+console.log(link);
