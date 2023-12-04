@@ -721,22 +721,55 @@
 // console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
 // Product of Array Except Self
-var productExceptSelf = function (nums) {
-  let answer = new Array(nums.length).fill(1);
-  let prefix = 1;
-  let postfix = 1;
-  for (let i = 0; i < answer.length; i++) {
-    answer[i] *= prefix;
-    prefix *= nums[i];
-  }
+// var productExceptSelf = function (nums) {
+//   let answer = new Array(nums.length).fill(1);
+//   let prefix = 1;
+//   let postfix = 1;
+//   for (let i = 0; i < answer.length; i++) {
+//     answer[i] *= prefix;
+//     prefix *= nums[i];
+//   }
 
-  for (let i = answer.length - 1; i >= 0; i--) {
-    answer[i] *= postfix;
-    [1, 4, 12, 24];
-    postfix *= nums[i];
-  }
+//   for (let i = answer.length - 1; i >= 0; i--) {
+//     answer[i] *= postfix;
+//     [1, 4, 12, 24];
+//     postfix *= nums[i];
+//   }
 
-  return answer;
-};
+//   return answer;
+// };
 
-console.log(productExceptSelf([1, 2, 3, 4]));
+// console.log(productExceptSelf([1, 2, 3, 4]));
+
+// Section Two pointers
+// var twoSum = function (numbers, target) {
+//   let first = 0;
+//   let last = numbers.length - 1;
+
+//   while (numbers[first] + numbers[last] !== target) {
+//     if (numbers[first] + numbers[last] > target) {
+//       last--;
+//     } else if (numbers[first] + numbers[last] < target) {
+//       first++;
+//     } else return;
+//   }
+
+//   return [first + 1, last + 1];
+// };
+
+// console.log(twoSum([-1, 0], -1));
+
+// function topThreeWords(text) {
+//   let textArr = text.split(/\s+/);
+//   let obj = {};
+
+//   for (let key in textArr) {
+//     obj[textArr[key]] = obj[textArr[key]] ? obj[textArr[key]] + 1 : 1;
+//   }
+
+//   obj = Object.fromEntries(Object.entries(obj).sort((a, b) => b[1] - a[1]));
+
+//   return Object.keys(obj).slice(0, 3);
+// }
+
+// console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e"));
