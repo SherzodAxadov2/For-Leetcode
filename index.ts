@@ -172,6 +172,6 @@
 
 // let nameOfPerson: title = 2345;
 
-const link = document.querySelector("a")!;
+// const link = document.querySelector("a")!;
 
-console.log(link);
+// console.log(link);
