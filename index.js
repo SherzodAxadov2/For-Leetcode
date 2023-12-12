@@ -801,33 +801,71 @@
 
 // console.log(searchRange([1, 3], 1));
 
-var search = function (nums, target) {
-  let low = 0,
-    high = nums.length - 1;
+// var search = function (nums, target) {
+//   let low = 0,
+//     high = nums.length - 1;
 
-  while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
+//   while (low <= high) {
+//     let mid = Math.floor((low + high) / 2);
 
-    if (nums[mid] === target) {
-      return mid;
-    }
+//     if (nums[mid] === target) {
+//       return mid;
+//     }
 
-    if (nums[low] <= nums[mid]) {
-      if (nums[low] <= target && target < nums[mid]) {
-        high = mid - 1;
-      } else {
-        low = mid + 1;
-      }
-    } else {
-      if (nums[mid] < target && target <= nums[high]) {
-        low = mid + 1;
-      } else {
-        high = mid - 1;
-      }
-    }
+//     if (nums[low] <= nums[mid]) {
+//       if (nums[low] <= target && target < nums[mid]) {
+//         high = mid - 1;
+//       } else {
+//         low = mid + 1;
+//       }
+//     } else {
+//       if (nums[mid] < target && target <= nums[high]) {
+//         low = mid + 1;
+//       } else {
+//         high = mid - 1;
+//       }
+//     }
+//   }
+
+//   return -1;
+// };
+
+// console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+
+// var intersection = function (nums1, nums2) {
+//   let obj = {};
+//   let result = [];
+
+//   for (let key of [...new Set(nums1), ...new Set(nums2)]) {
+//     console.log(key);
+//     obj[key] = obj[key] ? obj[key] + 1 : 1;
+//     if (obj[key] > 1) {
+//       result.push(+key);
+//     }
+//   }
+
+//   return result;
+// };
+
+// console.log(intersection([1, 2, 2, 1], [2, 2, 3, 3]));
+
+// var thirdMax = function (nums) {
+//   let result = [...new Set(nums)].sort((a, b) => b - a);
+
+//   return result.length>3?result[result.length-3]:result.at(-1);
+// };
+
+// console.log(thirdMax([5, 2, 7, 5, 8, 2]));
+
+var findDisappearedNumbers = function (nums) {
+  let set = new Set(nums);
+  let result = [];
+
+  for (let i = 1; i <= nums.length; i++) {
+    if (!set.has(i)) result.push(i);
   }
 
-  return -1;
+  return result;
 };
 
-console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
