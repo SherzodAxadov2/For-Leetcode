@@ -857,15 +857,58 @@
 
 // console.log(thirdMax([5, 2, 7, 5, 8, 2]));
 
-var findDisappearedNumbers = function (nums) {
-  let set = new Set(nums);
-  let result = [];
+// var findDisappearedNumbers = function (nums) {
+//   let set = new Set(nums);
+//   let result = [];
 
-  for (let i = 1; i <= nums.length; i++) {
-    if (!set.has(i)) result.push(i);
+//   for (let i = 1; i <= nums.length; i++) {
+//     if (!set.has(i)) result.push(i);
+//   }
+
+//   return result;
+// };
+
+// console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+
+// Find All Duplicates in an Array
+// var findDuplicates = function (nums) {
+//   let obj = {};
+//   let result = [];
+
+//   for (let key of nums) {
+//     obj[key] = obj[key] ? obj[key] + 1 : 1;
+
+//     if (obj[key] > 1) result.push(key);
+//   }
+
+//   return result;
+// };
+
+// Binary search!!!
+// var search = function (nums, target) {
+//   let lo = 0,
+//     hi = nums.length - 1;
+//   while (lo < hi) {
+//     let mid = lo + Math.floor((hi - lo + 1) / 2);
+//     if (target < nums[mid]) {
+//       hi = mid - 1;
+//     } else {
+//       lo = mid;
+//     }
+//   }
+//   return nums[lo] == target ? lo : -1;
+// };
+
+// console.log(search([-1, 0, 3, 5, 9, 12], 9));
+
+var simplifyPath = function (path) {
+  let result = "";
+  for (let str of path.split("/")) {
+    if (str.replace(/[\/.]/g, "")) {
+      result += `/${str.replace(/[\/.]/g, "")}`;
+    }
   }
-
-  return result;
+  return result.length ? result : "/";
 };
 
-console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+console.log(simplifyPath("/home/afw/...//aegfawe"));
