@@ -857,15 +857,26 @@
 
 // console.log(thirdMax([5, 2, 7, 5, 8, 2]));
 
-var findDisappearedNumbers = function (nums) {
-  let set = new Set(nums);
-  let result = [];
+// var findDisappearedNumbers = function (nums) {
+//   let set = new Set(nums);
+//   let result = [];
+//
+//   for (let i = 1; i <= nums.length; i++) {
+//     if (!set.has(i)) result.push(i);
+//   }
+//
+//   return result;
+// };
+//
+// console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
 
-  for (let i = 1; i <= nums.length; i++) {
-    if (!set.has(i)) result.push(i);
-  }
+const tr = true;
+console.log(typeof true);
 
-  return result;
-};
+const tNew = new Boolean();
+const str = new String("a");
+console.log(tNew, typeof tNew, tNew.valueOf());
 
-console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
+const tUnbox = tNew.valueOf();
+
+console.log(typeof str, typeof str.valueOf());
