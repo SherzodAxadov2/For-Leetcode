@@ -870,13 +870,64 @@
 //
 // console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]));
 
-const tr = true;
-console.log(typeof true);
+// const tr = true;
+// console.log(typeof true);
+//
+// const tNew = new Boolean();
+// const str = new String("a");
+// console.log(tNew, typeof tNew, tNew.valueOf());
+//
+// const tUnbox = tNew.valueOf();
+//
+// console.log(typeof str, typeof str.valueOf());
 
-const tNew = new Boolean();
-const str = new String("a");
-console.log(tNew, typeof tNew, tNew.valueOf());
+// Class
+let person = {
+    name: 'Sherzod',
+    greet(){
+        return `Hello my name is ${this.name}`
+    }
+}
 
-const tUnbox = tNew.valueOf();
+let running = {
+    type: 'running',
+    getSport: function() {
+        return `i am doing ${this.type}`
+    }
+}
 
-console.log(typeof str, typeof str.valueOf());
+// person.__proto__ = running
+// Object.setPrototypeOf(person, running) equal both of them
+
+// console.log(Object.getPrototypeOf(person),Object.getPrototypeOf(running))
+// console.log(person.getSport())
+
+// function Animal(name, color, age){
+//     this.name = name
+//     this.color = color
+//     Animal.prototype.age = age
+// }
+//
+// const dog = new Animal('dog', 'black', 1234)
+//
+// console.log(dog)
+// console.log(running.__proto__=== person.__proto__.__proto__)
+
+// let a = new Object()
+//
+// a.age = 21
+//
+// let b = Object.create({})
+// b['color'] = 'red'
+// b['name']= 'smth'
+// console.log(a, b)
+
+// person.hasOwnProperty()
+
+//Subtract the Product and Sum of Digits of an Integer
+
+var subtractProductAndSum = function(n) {
+    return String(n).split('').reduce((sum, currentValue)=> sum*currentValue) - String(n).split('').reduce((sum, currentValue)=> +sum+ +currentValue)
+};
+
+console.log(subtractProductAndSum(4421))
