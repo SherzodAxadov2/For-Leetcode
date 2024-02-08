@@ -11,6 +11,8 @@ yarn-error.lock
 lib-cov
 .yarn
 .yarnrc.yml
+*.lock
+*.lockb
 # Coverage directory used by tools like istanbul
 coverage
 
