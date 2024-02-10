@@ -926,8 +926,91 @@ let running = {
 
 //Subtract the Product and Sum of Digits of an Integer
 
-var subtractProductAndSum = function(n) {
-    return String(n).split('').reduce((sum, currentValue)=> sum*currentValue) - String(n).split('').reduce((sum, currentValue)=> +sum+ +currentValue)
-};
+// var subtractProductAndSum = function(n) {
+//     return String(n).split('').reduce((sum, currentValue)=> sum*currentValue) - String(n).split('').reduce((sum, currentValue)=> +sum+ +currentValue)
+// };
+//
+// console.log(subtractProductAndSum(4421))
 
-console.log(subtractProductAndSum(4421))
+// window.open('https://www.google.com', '_blank')
+
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (getRandomBool()) {
+//             resolve("resolved!")
+//         } else {
+//             reject("rejected!")
+//         }
+//     }, 1000)
+// })
+// console.log(await  promise)
+//
+// function getRandomBool(){
+//     return Math.random() < .5
+// }
+//
+// console.log(promise.finally(()=> console.log('finally')).then((res) => console.log(res)).catch((err) => console.log(err)))
+
+
+// function sleep(ms) {
+//     return new Promise((resolve) => setTimeout(resolve, ms))
+// }
+//
+// console.log(await sleep(1100))
+
+// using finally before then and catch
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("Success!"), 1000);
+// });
+//
+// promise
+//     .finally(() => {
+//         console.log("Promise settled.");
+//         return "From finally"; // Returning a value
+//     })
+//     .then(result => {
+//         console.log("then result:", result); // What will this print?
+//     });
+
+
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const data = { name: "John", age: 30 };
+//             resolve(data);
+//         }, 1000);
+//     })
+//         .finally(() => {
+//             console.log("Data processing complete."); // Side effect here
+//             return // Returning a value (incorrect)
+//         })
+//         .then(result => {
+//             console.log("Processed data:", result); // Expecting entire data object
+//         });
+// }
+
+
+// try {
+//     const speed = car.speed
+//     console.log(speed)
+// } catch (err) {
+//     console.log(`An error was thrown: ${err.message}`)
+//     // the code cleanly logs:
+//     // "An error was thrown: ReferenceError: car is not defined"
+// }
+
+// let err = new Error('error')
+// console.log(Object.keys(err))
+
+const resp = await fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+        'X-API-Key': apiKey,
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+
+return await resp.json()
