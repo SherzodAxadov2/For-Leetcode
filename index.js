@@ -1003,14 +1003,15 @@ let running = {
 // let err = new Error('error')
 // console.log(Object.keys(err))
 
-const resp = await fetch(url, {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-        'X-API-Key': apiKey,
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-})
-
-return await resp.json()
+// const resp = await fetch(url, {
+//     method: 'POST',
+//     mode: 'cors',
+//     headers: {
+//         'X-API-Key': apiKey,
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(data)
+// })
+//
+// return await resp.json()
+console.log('gitbutler')
